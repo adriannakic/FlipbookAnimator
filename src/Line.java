@@ -19,37 +19,13 @@ public class Line {
 	}
 	
 	
+	public void setPoint1(double x1v2, double y1v2) {
+		x1 = x1v2;
+		y1 = y1v2;
+	}
+	
 	public void setPoint2(double x2v2, double y2v2) {
 		x2 = x2v2;
 		y2 = y2v2;
 	}
-	
-	//checks if the lines intersect
-	public boolean intersects (Line other) {
-		
-		//find Px of intersection
-		double pX = (((x1*y2-y1*x2)*(other.x1-other.x2)-(x1-x2)*(other.x1*other.y2-other.y1*other.x2))/((x1-x2)*(other.y1-other.y2)-(y1-y2)*(other.x1-other.x2)));
-		double pY = (((x1*y2-y1*x2)*(other.y1-other.y2)-(y1-y2)*(other.x1*other.y2-other.y1*other.x2))/((x1-x2)*(other.y1-other.y2)-(y1-y2)*(other.x1-other.x2)));
-		//is Px between both lines' x ranges?
-		//if yes, return true
-		//if no, return false
-		if ((pX <= x2 && pX >= x1 && pX <= other.x2 && pX >= other.x1) || (pX >= x2 && pX <= x1 && pX <= other.x2 && pX >= other.x1) || (pX <= x2 && pX >= x1 && pX >= other.x2 && pX <= other.x1) || (pX >= x2 && pX <= x1 && pX <= other.x2 && pX >= other.x1)) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-	
-	public double getXIntercept (Line other) {
-		double pX = (((x1*y2-y1*x2)*(other.x1-other.x2)-(x1-x2)*(other.x1*other.y2-other.y1*other.x2))/((x1-x2)*(other.y1-other.y2)-(y1-y2)*(other.x1-other.x2)));
-		return pX;
-	}
-	
-	public double getYIntercept (Line other){
-		double pY = (((x1*y2-y1*x2)*(other.y1-other.y2)-(y1-y2)*(other.x1*other.y2-other.y1*other.x2))/((x1-x2)*(other.y1-other.y2)-(y1-y2)*(other.x1-other.x2)));
-		return pY;
-	}
-	
-	
 }

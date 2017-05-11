@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 
 import processing.awt.PSurfaceAWT;
 
-public class Main extends DrawingSurface{
+public class Main extends Canvas{
 
 	// The statements in the setup() function 
 	// execute once when the program begins
@@ -13,7 +13,7 @@ public class Main extends DrawingSurface{
 	}
 	
 	public static void main(String args[]) {
-		DrawingSurface drawing = new DrawingSurface();
+		Canvas drawing = new Canvas();
 		
 		PSurfaceAWT surf = (PSurfaceAWT) drawing.getSurface();
 		PSurfaceAWT.SmoothCanvas canvas = (PSurfaceAWT.SmoothCanvas) surf.getNative();

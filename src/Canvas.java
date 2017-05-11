@@ -5,26 +5,18 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 
 //3+ classes: drawingsurface/canvas, house, draw
-public class DrawingSurface extends PApplet {
+public class Canvas extends PApplet {
 	
-	private House h;
-	private Person p;
 
-	public DrawingSurface () {
-		h = new House();
-		p = new Person();
+	public Canvas () {
 		runSketch();
 	}
 	
 	
 	
 	public void mousePressed() {
-		  h.reposition(mouseX, mouseY);
+
 		  
-		  if (p.isOnHead(mouseX, mouseY) == true) {
-			  p.randomHeadColor();
-			  p.draw(this);
-		  }
 	}
 	
 	public void setup() {
@@ -40,12 +32,12 @@ public class DrawingSurface extends PApplet {
 	  noFill();
 	  stroke(0);
 	  
+	  Line l = new Line(30, 30, 50, 50);
+	  l.draw(this);
+	  
 	  float xRatio = width/500f;
 	  float yRatio = height/500f;
 	  scale(xRatio, yRatio);
-	  
-	  h.draw(this);
-	  p.draw(this);
 	  
 	  frameRate(12);
 	  println(mouseX + " : " + mouseY);
@@ -53,25 +45,20 @@ public class DrawingSurface extends PApplet {
 	  
 	  if (keyPressed) {
 			if (key == 'R') {
-			    p.randomHeadColor();
 			    System.out.println("pressed R");
 			}
-			
-				if (key == CODED) {
-					//up/down for house scaling (currently broken)
-				    if (keyCode == UP) {
-				      h.scaleUp();
-				    } else if (keyCode == DOWN) {
-				      h.scaleDown();
-				    }
-				    //left/right from person
-				    if (keyCode == LEFT) {
-					      p.moveLeft();
-					} 
-				    else if (keyCode == RIGHT) {
-					      p.moveRight();
-					} 
+			if (key == CODED) {
+				//up/down for house scaling (currently broken)
+				if (keyCode == UP) {
+				} 
+				else if (keyCode == DOWN) {
 				}
+				//left/right from person
+				if (keyCode == LEFT) {
+				} 
+				else if (keyCode == RIGHT) {
+				} 
+			}
 		}
 	  
 	}
