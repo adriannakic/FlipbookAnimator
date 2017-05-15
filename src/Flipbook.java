@@ -1,5 +1,12 @@
 import java.util.ArrayList;
-
+/**
+ * The Flipbook class is a representation of a flipbook, which is
+ * a sequence of frames. The draw method uses a timer to draw each
+ * frame in the correct order upon the canvas.
+ * @author Adrian Nakic, Bryce Rausch
+ * @version alpha 1.0
+ * @since 5/10/2017
+ */
 public class Flipbook {
 	
 	private ArrayList<Frame> frames = new ArrayList<Frame>();

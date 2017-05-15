@@ -3,7 +3,13 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 
 import processing.awt.PSurfaceAWT;
-
+/**
+ * This main class connects all other classes within the project, calling
+ * all draw methods and instantiating each object as the canvas is used.
+ * @author Adrian Nakic, Bryce Rausch
+ * @version alpha 1.0
+ * @since 5/10/2017
+ */
 public class Main extends Canvas{
 
 	// The statements in the setup() function 

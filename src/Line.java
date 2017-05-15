@@ -1,5 +1,12 @@
 import processing.core.PApplet;
-
+/**
+ * This Line class represents a squiggle, or amorphous line.
+ * The Line class's draw method connects each arraylist of 
+ * points with a line from the Processing library.
+ * @author Adrian Nakic, Bryce Rausch
+ * @version alpha 1.0
+ * @since 5/10/2017
+ */
 public class Line {
 	
 	private double x1;
