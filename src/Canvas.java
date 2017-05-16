@@ -2,6 +2,8 @@
 import processing.awt.PSurfaceAWT;
 import processing.core.PApplet;
 import java.awt.Dimension;
+import java.awt.geom.Point2D;
+import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 /**
  * This Canvas class represents a physical canvas upon which a user can
@@ -14,15 +16,10 @@ import javax.swing.JFrame;
 public class Canvas extends PApplet {
 	
 
+	public Flipbook flipbook = new Flipbook();
+	
 	public Canvas () {
 		runSketch();
-	}
-	
-	
-	
-	public void mousePressed() {
-
-		  
 	}
 	
 	public void setup() {
@@ -38,8 +35,6 @@ public class Canvas extends PApplet {
 	  noFill();
 	  stroke(0);
 	  
-	  Line l = new Line(30, 30, 50, 50);
-	  l.draw(this);
 	  
 	  float xRatio = width/500f;
 	  float yRatio = height/500f;
@@ -67,6 +62,14 @@ public class Canvas extends PApplet {
 			}
 		}
 	  
+	}
+	public void mousePressed() {
+		if (mouseButton == LEFT) {
+			poly.add(new Point2D.Double(mouseX,mouseY));
+			x = mouseX;
+			y = mouseY;
+			time = ANIMATION_TIME;
+		} 
 	}
 
 }

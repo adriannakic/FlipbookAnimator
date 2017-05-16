@@ -1,4 +1,7 @@
 import processing.core.PApplet;
+import java.awt.Point;
+import java.awt.geom.Point2D;
+import java.util.ArrayList;
 /**
  * This Line class represents a squiggle, or amorphous line.
  * The Line class's draw method connects each arraylist of 
@@ -9,30 +12,36 @@ import processing.core.PApplet;
  */
 public class Line {
 	
-	private double x1;
-	private double y1;
-	private double x2;
-	private double y2;
+	private ArrayList <Point2D.Double> line;//arraylist of (x,y) coords
 	
-	public Line (double x1, double y1, double x2, double y2) {
-		this.x1 = x1;
-		this.y1 = y1;
-		this.x2 = x2;
-		this.y2 = y2;
+	/**
+	 * Constructs a new, empty line. The Point2D.Double arraylist is instantiated.
+	 */
+	public Line () {
+		line = new ArrayList<Point2D.Double>();
 	}
 	
+	/**
+	 * the draw method for each individual line. The lines aren't lines in the traditional sense, but are more like squiggles wit ha beginning and end, stored as a series of points.
+	 * @param p The canvas with which to draw
+	 */
 	public void draw (PApplet p) {
-		p.line((float)x1, (float)y1, (float)x2, (float)y2);
+		if (line.size() == 1) {
+			p.point((float)line.get(0).getX(), (float)line.get(0).getY());
+		}
+		else {
+			for (int i = 0; i < line.size()-1; i++) {
+				p.line((float)line.get(i).getX(), (float)line.get(i).getY(), (float)line.get(i+1).getX(), (float)line.get(i+1).getY());
+			}
+		}
 	}
 	
-	
-	public void setPoint1(double x1v2, double y1v2) {
-		x1 = x1v2;
-		y1 = y1v2;
-	}
-	
-	public void setPoint2(double x2v2, double y2v2) {
-		x2 = x2v2;
-		y2 = y2v2;
+	/**
+	 * Adds a new point with coordinates (x,y) to the line
+	 * @param x The x coordinate of the point added to the line
+	 * @param y The y coordinate of the point added to the line
+	 */
+	public void addPoint(double x, double y) {
+		line.add(new Point2D.Double(x, y));
 	}
 }

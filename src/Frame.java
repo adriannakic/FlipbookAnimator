@@ -10,19 +10,26 @@ public class Frame {
 	
 	private ArrayList<Line> lines = new ArrayList<Line>();
 	
-	//constructor
+	/**
+	 * constructs a new frame
+	 */
 	public Frame () {
 		
 	}
 	
 	//methods
 	
-	//clears the frame of all lines
+	/**
+	 * clears the frame of all lines, in case the user wants to restart a frame
+	 */
 	public void clearFrame () {
 		lines.clear();
 	}
 	
-	//draws the frame by drawing each line
+	/**
+	 * The draw method for a frame, which calls the draw method for each of it's lines
+	 * @param c The canvas being passed in
+	 */
 	public void draw(Canvas c) {
 		for (Line l: lines) {
 			l.draw(c);

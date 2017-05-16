@@ -21,17 +21,27 @@ public class Flipbook {
 		frames.add(new Frame());
 	}
 	
-	//returns the total number of frames in flipbook
+	/**
+	 * returns the total number of frames in Flipbook
+	 * @return the total number of frames in the Flipbook
+	 */
 	public int numFrames() {
 		return frames.size();
 	}
 	
-	//returns a frame at specified index
+	/**
+	 * returns a frame at specified index
+	 * @param index the index in Flipbook of the desired frame
+	 * @return the frame at the specified index in the Flipbook
+	 */
 	public Frame getFrame(int index) {
 		return frames.get(index);
 	}
 	
-	//draw method, calls draw method for each frame
+	/**
+	 * draw method, calls draw method for each frame
+	 * @param c the canvas used to draw
+	 */
 	public void draw(Canvas c) {
 		//timer goes here
 		for (Frame f: frames) {
