@@ -32,6 +32,5 @@ public class Button {
 	
 	public void draw (Canvas c) {
 		c.rect((float)topLeftCoord.getX(), (float)topLeftCoord.getY(), (float)width, (float)height);
-		
 	}
 }

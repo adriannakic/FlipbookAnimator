@@ -65,10 +65,10 @@ public class Canvas extends PApplet {
 	}
 	public void mousePressed() {
 		if (mouseButton == LEFT) {
-			poly.add(new Point2D.Double(mouseX,mouseY));
-			x = mouseX;
-			y = mouseY;
-			time = ANIMATION_TIME;
+			//poly.add(new Point2D.Double(mouseX,mouseY));
+			//x = mouseX;
+			//y = mouseY;
+			//time = ANIMATION_TIME;
 		} 
 	}
 
