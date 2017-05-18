@@ -44,4 +44,7 @@ public class Line {
 	public void addPoint(double x, double y) {
 		line.add(new Point2D.Double(x, y));
 	}
+	public void clearLine(){
+		line.clear();
+	}
 }

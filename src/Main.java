@@ -20,7 +20,7 @@ public class Main extends Canvas{
 	
 	public static void main(String args[]) {
 		Canvas drawing = new Canvas();
-		
+		// drawing.draw();
 		PSurfaceAWT surf = (PSurfaceAWT) drawing.getSurface();
 		PSurfaceAWT.SmoothCanvas canvas = (PSurfaceAWT.SmoothCanvas) surf.getNative();
 		JFrame window = (JFrame)canvas.getFrame();

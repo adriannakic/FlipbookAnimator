@@ -30,6 +30,9 @@ public class Canvas extends PApplet {
 	// program is stopped. Each statement is executed in 
 	// sequence and after the last line is read, the first 
 	// line is executed again.
+	// Line l = new Line();
+	Frame f = new Frame();
+	Flipbook flip = new Flipbook();
 	public void draw() { 
 	  background(255);   // Clear the screen with a white background
 	  noFill();
@@ -45,6 +48,7 @@ public class Canvas extends PApplet {
 	  scale(xRatio, yRatio);
 	  
 	  frameRate(60);
+	  f.draw(this);
 	  button1.isPressed(mouseX, mouseY);
 	  button1.draw(this);
 	  fill(0,0,0);
@@ -72,13 +76,36 @@ public class Canvas extends PApplet {
 		}
 	  
 	}
+	
+	
+	Line l;
+	
+	
 	public void mousePressed() {
 		if (mouseButton == LEFT) {
+			l = new Line();
+			f.addLine(l);
+			l.addPoint(mouseX, mouseY);
+			System.out.println("mouse pressed at: " + mouseX + "," + mouseY);
 			//poly.add(new Point2D.Double(mouseX,mouseY));
 			//x = mouseX;
 			//y = mouseY;
 			//time = ANIMATION_TIME;
 		} 
+	}
+	public void mouseDragged(){
+		if(mouseButton == LEFT){
+			l.addPoint(mouseX, mouseY);
+			System.out.println("mouse dragged at: " + mouseX + "," + mouseY);
+		}
+	}
+	public void mouseReleased(){
+		if(mouseButton == LEFT){
+			l.addPoint(mouseX, mouseY);
+			System.out.println("mouse released at: " + mouseX + "," + mouseY);
+			
+			
+		}
 	}
 
 }
