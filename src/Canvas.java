@@ -34,14 +34,23 @@ public class Canvas extends PApplet {
 	  background(255);   // Clear the screen with a white background
 	  noFill();
 	  stroke(0);
+	  textAlign(CENTER);
+	  textSize(12);
+	  
+	  Button button1 = new Button(50, 50, 150, 50, "Next Frame");
 	  
 	  
 	  float xRatio = width/500f;
 	  float yRatio = height/500f;
 	  scale(xRatio, yRatio);
 	  
-	  frameRate(12);
-	  println(mouseX + " : " + mouseY);
+	  frameRate(60);
+	  button1.isPressed(mouseX, mouseY);
+	  button1.draw(this);
+	  fill(0,0,0);
+	  text(mouseX + " : " + mouseY,(float)width/2,(float)20);
+	  //println(mouseX + " : " + mouseY);
+	  button1.isPressed(mouseX, mouseY);
 	  //h.reposition(mouseX, mouseY);
 	  
 	  if (keyPressed) {
