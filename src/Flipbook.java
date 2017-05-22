@@ -21,11 +21,15 @@ public class Flipbook {
 		frames.add(new Frame());
 	}
 	
+	public void addFrame(Frame f) {
+		frames.add(f);
+	}
+	
 	/**
 	 * returns the total number of frames in Flipbook
 	 * @return the total number of frames in the Flipbook
 	 */
-	public int numFrames() {
+	public int getNumFrames() {
 		return frames.size();
 	}
 	
@@ -35,7 +39,10 @@ public class Flipbook {
 	 * @return the frame at the specified index in the Flipbook
 	 */
 	public Frame getFrame(int index) {
-		return frames.get(index);
+		if (frames.size() > index) {
+			return frames.get(index);
+		}
+		return null;
 	}
 	
 	/**

@@ -33,7 +33,7 @@ public class Frame {
 	public void draw(Canvas c) {
 		for (Line l: lines) {
 			l.draw(c);
-			System.out.println("Number of lines in frame" + lines.size());
+			//System.out.println("Number of lines in frame" + lines.size());
 		}
 	}
 	public void addLine(Line l){
