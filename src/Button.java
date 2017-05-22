@@ -60,7 +60,7 @@ public class Button {
 	 */
 	public boolean isPressed(double x, double y) {
 		if (x >= xCoord && x <= xCoord+width && y >= yCoord && y <= yCoord+height) {
-			System.out.println("("+x+", "+y+") is within the button");
+			//System.out.println("("+x+", "+y+") is within the button");
 			isPressed = true;
 			return true;
 		}

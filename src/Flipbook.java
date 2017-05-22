@@ -13,7 +13,7 @@ public class Flipbook {
 	
 	//constructor
 	public Flipbook () {
-		
+		addFrame();
 	}
 	
 	//methods
@@ -51,9 +51,14 @@ public class Flipbook {
 	 */
 	public void draw(Canvas c) {
 		//timer goes here
+		
 		for (Frame f: frames) {
 			f.draw(c);
 		}
+	}
+	
+	public void addLineToFrame(int frameIndex, Line l) {
+		frames.get(frameIndex).addLine(l);
 	}
 	
 	
